@@ -1,0 +1,2 @@
+PROGRAM empty_program
+END_PROGRAM
