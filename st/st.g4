@@ -2,24 +2,18 @@
 
 grammar st;
 
-tokens {
-	PROGRAM,
-	END_PROGRAM
-}
+//tokens {
+//	PROGRAM,
+//	END_PROGRAM
+//}
 
-prog:	PROGRAM END_PROGRAM ;
+prog :	'PROGRAM' prog_name 'END_PROGRAM' ;
 
-// prog:	(expr NEWLINE)* ;
-// expr:	expr ('*'|'/')
-// expr
-// 	|	expr ('+'|'-')
-// expr
-// 	|	INT
-// 	|	'(' expr ')'
-// 	;
-// NEWLINE	: [\r\n]+ ;
-// INT		: [0-9]+ ;
+prog_name :	ID ;
+ID :	[a-zA-Z] [a-zA-Z0-9_]* ;
+WD :	[ \r\t\n]+ -> skip ;
 
 /*
  * What is 'channels'?
+ * What is 'tokens'? When it is used?
  */
