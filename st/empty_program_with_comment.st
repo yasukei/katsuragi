@@ -9,4 +9,10 @@ PROGRAM empty_program
 /*
  * block comment
  */
+
+(* block comment *)
+
+(*
+ * block comment
+ *)
 END_PROGRAM
