@@ -1,4 +1,5 @@
 // Grammer for Structured Text.
+// refer: http://www.plcacademy.com/structured-text-tutorial/
 
 grammar st;
 
