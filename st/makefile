@@ -6,8 +6,12 @@ GRUN=java org.antlr.v4.gui.TestRig
 
 all: compile_antlr compile_java run
 
+show: compile_antlr
+	dot -Tpng *.dot -O
+	ristretto *.png
+
 compile_antlr:
-	$(ANTLR) $(TARGET).g4
+	$(ANTLR) $(TARGET).g4 -atn
 
 compile_java:
 	$(JAVAC) $(TARGET)*.java
@@ -19,4 +23,4 @@ test:
 	# TODO
 
 clean:
-	rm -f *.java *.class *.tokens
+	rm -f *.java *.class *.tokens *.dot *.png
