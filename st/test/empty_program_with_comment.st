@@ -1,4 +1,4 @@
-PROGRAM empty_program
+PROGRAM empty_program_with_comment
 // line comment
 
 // line comment

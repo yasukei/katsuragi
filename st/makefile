@@ -37,7 +37,7 @@ run: compile_parser
 	CLASSPATH="$(PARSER_DIR):$(CLASSPATH)" $(GRUN) $(TARGET) prog -gui -trace -input-filename $(TEST_DIR)/empty_program_with_comment.st
 
 test: compile_test
-	CLASSPATH="$(JUNIT):$(TEST_DIR):$(MODEL_DIR):$(PARSER_DIR):$(CLASSPATH)" $(JAVA) org.junit.runner.JUnitCore MyTest < $(TEST_DIR)/empty_program_with_comment.st
+	CLASSPATH="$(JUNIT):$(TEST_DIR):$(MODEL_DIR):$(PARSER_DIR):$(CLASSPATH)" $(JAVA) org.junit.runner.JUnitCore MyTest
 
 clean:
 	rm -f \
