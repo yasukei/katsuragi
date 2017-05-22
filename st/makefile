@@ -17,7 +17,7 @@ compile_java:
 	$(JAVAC) $(TARGET)*.java
 
 run:
-	$(GRUN) st prog -gui -trace -input-filename empty_program_with_comment.st
+	$(GRUN) $(TARGET) prog -gui -trace -input-filename empty_program_with_comment.st
 
 test:
 	# TODO

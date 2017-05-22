@@ -11,6 +11,12 @@ grammar st;
 prog :	'PROGRAM' prog_name 'END_PROGRAM' ;
 
 prog_name :	ID ;
+
+// statement :
+// expression :
+// operator :
+// operand :
+
 ID :	[a-zA-Z] [a-zA-Z0-9_]* ;
 WD :	[ \r\t\n]+ -> skip ;
 
