@@ -34,7 +34,7 @@ compile_test: compile_model
 	CLASSPATH="$(JUNIT):$(MODEL_DIR):$(PARSER_DIR):$(CLASSPATH)" $(JAVAC) $(TEST_DIR)/*.java
 
 run: compile_parser
-	CLASSPATH="$(PARSER_DIR):$(CLASSPATH)" $(GRUN) $(TARGET) prog -gui -trace -input-filename $(TEST_DIR)/empty_program_with_comment.st
+	CLASSPATH="$(PARSER_DIR):$(CLASSPATH)" $(GRUN) $(TARGET) program -gui -trace -input-filename $(TEST_DIR)/variable_assignment.st
 
 test: compile_test
 	CLASSPATH="$(JUNIT):$(TEST_DIR):$(MODEL_DIR):$(PARSER_DIR):$(CLASSPATH)" $(JAVA) org.junit.runner.JUnitCore MyTest

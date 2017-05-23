@@ -3,22 +3,45 @@
 
 grammar st;
 
-//tokens {
-//	PROGRAM,
-//	END_PROGRAM
-//}
+program :
+	prog_section ;
 
-prog :	'PROGRAM' prog_name 'END_PROGRAM' ;
+prog_section :
+	'PROGRAM' prog_name prog_body 'END_PROGRAM' ;
 
-prog_name :	ID ;
+prog_name :
+	ID ;
 
-// statement :
-// expression :
+prog_body :
+	(var_decl_section)* (statement ';')* ;
+
+var_decl_section :
+	'VAR' (var_decl)* 'END_VAR' ;
+
+var_decl :
+	var_name ':' var_type ';' ;
+
+var_name :
+	ID ;
+
+var_type :
+	ID ;
+
+statement :
+	assignment ;
+
+assignment :
+	var_name ':=' expression ;
+
+expression :
+	INT ;
+
 // operator :
 // operand :
 
 ID :	[a-zA-Z] [a-zA-Z0-9_]* ;
 WD :	[ \r\t\n]+ -> skip ;
+INT :	'0' | [1-9][0-9]* ;
 
 BLOCK_COMMENT1 :
 	'/*' .*? '*/' -> skip	// '-> channel(HIDDEN)' is also ok
