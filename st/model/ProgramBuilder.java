@@ -18,7 +18,7 @@ public class ProgramBuilder extends stBaseListener {
 		_prog.addStatement(new Assignment(var_name, expression));
 	}
 
-	public Program getProgram() {
+	public Program buildProgram() {
 		return _prog;
 	}
 
